@@ -83,7 +83,7 @@ public class EstoqueProdutoLimpeza implements Estoque{
 	}
 
 	@Override
-	public float mediaValoresVenda() {
+	public float mediaValoresLucros() {
 		float somaValoresVenda = 0;
 		float somaValoresCusto = 0;
 		float media;
@@ -98,6 +98,7 @@ public class EstoqueProdutoLimpeza implements Estoque{
 		media = mediaVenda - mediacusto; 
 		return media;
 	}
+
 	
 
 }
