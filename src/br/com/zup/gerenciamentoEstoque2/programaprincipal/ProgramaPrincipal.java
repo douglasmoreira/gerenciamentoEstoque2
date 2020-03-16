@@ -15,14 +15,14 @@ public class ProgramaPrincipal {
 		
 		Scanner input = new Scanner(System.in);
 		EstoqueProdutoLimpeza estoqueProdutoLimpeza = new EstoqueProdutoLimpeza();
-		EstoqueProdutoAlimenticio estoqueAlimenticio = new EstoqueProdutoAlimenticio();
+		EstoqueProdutoAlimenticio estoqueProdutoAlimenticio = new EstoqueProdutoAlimenticio();
 		
 		System.out.println("BEM VINDO AO NOSSO SISTEMA DE ESTOQUE!\n");
 		
 		int opcao = 0;
 		
 		do {
-			opcao = menu(input, estoqueProdutoLimpeza, estoqueAlimenticio);		
+			opcao = menu(input, estoqueProdutoLimpeza, estoqueProdutoAlimenticio);		
 		}while(opcao != 0);
 	}
 
@@ -60,7 +60,8 @@ public class ProgramaPrincipal {
 			System.out.printf("%-75s %s\n","Para consultar um produto", "digite 6");
 			System.out.printf("%-75s %s\n","Para gravar a lista de produtos em um arquivo ProdutoLimpeza.txt", "digite 7");
 			System.out.printf("%-75s %s\n","Para saber a quantidade de todos os produtos na lista", "digite 8");
-			System.out.printf("%-75s %s\n","Para voltar ao menu anterior","digite 0");
+			System.out.printf("%-75s %s\n","Para saber a media de valores", "digite 9");
+			System.out.printf("%-75s %s\n","Para voltar ao menu anterior","digite 0\n");
 			opcao= input.nextInt();
 			
 			switch (opcao) {
@@ -88,6 +89,9 @@ public class ProgramaPrincipal {
 			case 8:
 				System.out.println("A quantidade de produtos no estoque é " + estoqueProdutoLimpeza.quantidadeProdutosEmEstoque());
 				break;
+			case 9:
+				System.out.println("A média de valores de venda é: " + estoqueProdutoLimpeza.mediaValoresVenda());
+				break;
 			case 0:
 				break;
 			}
@@ -96,8 +100,6 @@ public class ProgramaPrincipal {
 		
 		return opcao;
 	}
-
-
 	
 	public static int subMenuprodutoAlimenticio(Scanner input, EstoqueProdutoAlimenticio estoqueAlimenticio) {
 	
@@ -112,7 +114,8 @@ public class ProgramaPrincipal {
 		System.out.printf("%-75s %s\n","Para consultar um produto", "digite 6");
 		System.out.printf("%-75s %s\n","Para gravar a lista de produtos em um arquivo ProdutoAlimenticios.txt", "digite 7");
 		System.out.printf("%-75s %s\n","Para saber a quantidade de todos os produtos na lista", "digite 8");
-		System.out.printf("%-75s %s\n","Para voltar ao menu anterior","digite 0");
+		System.out.printf("%-75s %s\n","Para saber a media de valores", "digite 9");
+		System.out.printf("%-75s %s\n","Para voltar ao menu anterior","digite 0\n");
 		opcao= input.nextInt();
 		
 		switch (opcao) {
@@ -140,6 +143,9 @@ public class ProgramaPrincipal {
 		case 8:
 			System.out.println("A quantidade de produtos no estoque é " + estoqueAlimenticio.quantidadeProdutosEmEstoque());
 			break;
+		case 9:
+			System.out.println("A média de valores de venda é: " + estoqueAlimenticio.mediaValoresVenda());;
+			break;
 		case 0:
 			break;
 		}
@@ -148,7 +154,6 @@ public class ProgramaPrincipal {
 		return opcao;
 	}
 
-	
 	public static boolean cadastraProdutoLimpeza(Scanner input, EstoqueProdutoLimpeza estoqueLimpeza) {
 		
 		try {

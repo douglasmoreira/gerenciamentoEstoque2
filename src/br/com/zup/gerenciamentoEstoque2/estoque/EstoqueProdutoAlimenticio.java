@@ -80,4 +80,20 @@ public class EstoqueProdutoAlimenticio implements Estoque {
 
 		return  produtosAlimenticio.size();
 	}
+
+	@Override
+	public float mediaValoresVenda() {
+		float somaValoresVenda = 0;
+		float somaValoresCusto = 0;
+		float media;
+		for (ProdutoAlimenticio produtoAlimenticio : produtosAlimenticio.values()) {
+			 somaValoresVenda += produtoAlimenticio.getPrecoVenda();
+			 somaValoresCusto += produtoAlimenticio.getPrecoCusto();
+		}
+		float mediaVenda = somaValoresVenda / produtosAlimenticio.size();
+		float mediacusto = somaValoresCusto / produtosAlimenticio.size();
+		
+		media = mediaVenda - mediacusto; 
+		return media;
+	}
 }

@@ -20,5 +20,10 @@ public interface Estoque {
 	public boolean gravaListaProdutos();
 
 	public int quantidadeProdutosEmEstoque();
+	
+	//método para avaliar os valores medios de venda para se ter noção de ganhos e percas
+	public float mediaValoresVenda();
+	
+	public float mediaValorescusto();
 
 }

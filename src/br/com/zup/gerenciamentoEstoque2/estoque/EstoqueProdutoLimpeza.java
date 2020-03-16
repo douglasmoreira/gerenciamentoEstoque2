@@ -81,7 +81,23 @@ public class EstoqueProdutoLimpeza implements Estoque{
 
 		return produtosDeLimpeza.size();
 	}
-	
+
+	@Override
+	public float mediaValoresVenda() {
+		float somaValoresVenda = 0;
+		float somaValoresCusto = 0;
+		float media;
+		for (ProdutoLimpeza produtoAlimenticio : produtosDeLimpeza.values()) {
+			 somaValoresVenda += produtoAlimenticio.getPrecoVenda();
+			 somaValoresCusto += produtoAlimenticio.getPrecoCusto();
+			 
+		}
+		float mediaVenda = somaValoresVenda / produtosDeLimpeza.size();
+		float mediacusto = somaValoresCusto / produtosDeLimpeza.size();
+		
+		media = mediaVenda - mediacusto; 
+		return media;
+	}
 	
 
 }
