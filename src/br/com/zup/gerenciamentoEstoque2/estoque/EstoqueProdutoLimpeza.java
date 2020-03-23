@@ -56,8 +56,10 @@ public class EstoqueProdutoLimpeza implements Estoque{
 	public boolean alteraPrecoProduto(float porcentagem, boolean aumenta, int codigoDeBarras) {
 		
 		if(aumenta) {
+			// XXX: Aqui deve ser alterado o preco de venda e não de custo.
 			produtosDeLimpeza.get(codigoDeBarras).setPrecoCusto((produtosDeLimpeza.get(codigoDeBarras).getPrecoVenda() * (1 + (porcentagem / 100))));
 		} else {
+			// XXX: Aqui deve ser alterado o preco de venda e não de custo.
 			produtosDeLimpeza.get(codigoDeBarras).setPrecoCusto((produtosDeLimpeza.get(codigoDeBarras).getPrecoVenda() * (1 - (porcentagem / 100))));
 		}
 		return false;
@@ -97,6 +99,13 @@ public class EstoqueProdutoLimpeza implements Estoque{
 		
 		media = mediaVenda - mediacusto; 
 		return media;
+	}
+
+	//XXX: Tive de adicionar este método pro programa compilar.
+	@Override
+	public float mediaValorescusto() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 	
 

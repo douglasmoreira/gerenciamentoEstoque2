@@ -69,6 +69,7 @@ public class EstoqueProdutoAlimenticio implements Estoque {
 		return produtosAlimenticio.get(codigoDeBarras);
 	}
 
+	//TODO: O método tem esse tipo de retorno pq? Não é usado onde é chamado.
 	@Override
 	public boolean gravaListaProdutos() {
 		SalvaListaArquivo.salvaProdutosAlimenticiosEmArquivo(produtosAlimenticio);
@@ -95,5 +96,11 @@ public class EstoqueProdutoAlimenticio implements Estoque {
 		
 		media = mediaVenda - mediacusto; 
 		return media;
+	}
+
+	@Override
+	public float mediaValorescusto() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }
